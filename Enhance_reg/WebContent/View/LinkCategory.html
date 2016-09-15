@@ -1,0 +1,51 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="https://cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style>
+.row{
+	margin-bottom:5px;
+	margin-left: 0px !important;
+}
+.modal-body{
+	height:auto !important;
+}
+.horizonline{
+	margin: 0px 15px 15px 0px;
+}
+</style>
+
+	<div class="container-fluid">
+		<div class="row">
+			<button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Add Category Link</button>
+		</div>
+		<div id="Panel_Table"></div>
+	</div>
+	
+<script>
+function insertsubject() {
+	
+	$.ajax({
+		url: "http://192.168.1.49:8082/niems/Model/user/insert.jsp?callback=?",
+		type: "post",
+		dataType: "jsonp",
+		data:{"user_name":$("#input-name").val(), "password":$("#input-pass").val(), "prefix":$("#input-init").val(), "first_name":$("#input-fname").val(), "last_name":$("#input-lname").val(), "email":$("#input-email").val(), "province":$("#province").val(), "status":"True", "position":$("#input-pos1").val(), "organization":$("#input-pos").val(), "user_items":"1", "role_id":"2"},
+		success:function(data){
+			if(data != null){
+				
+				alert("insert complate");
+				
+    			}else{		
+    				 alert("insert error");
+
+    			}
+			 
+			}
+		});
+	}
+</script>
+

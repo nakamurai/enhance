@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Usage Log Back Office</title>
+  
+<!-- 	<script src="../library/jquery/jquery-1.12.4.js"></script> -->
+<!-- 	<script src="../library/jquery/jquery-1.12.4.min.js" type="text/javascript" language="javascript"></script> -->
+
+<!-- 	<link rel="stylesheet" href="../library/bootstrap/css/bootstrap.css"> -->
+	
+<!-- 	<script type="text/javascript" src="../library/jsgrid-1.5.2/jsgrid.min.js"></script> -->
+<!-- 	<link rel="stylesheet" type="text/css" href="../library/jsgrid-1.5.2/jsgrid.css" /> -->
+<!--     <link rel="stylesheet" type="text/css" href="../library/jsgrid-1.5.2/jsgrid-theme.css" /> -->
+    
+<!--     <script src="../library/bootstrap/js/bootstrap.min.js"></script> -->
+<!-- 	<link rel="stylesheet" href="../Css/main.css"> -->
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row"></div>
+		<div id="jsGrid"></div>
+	</div><!-- /tag container-fluid -->
+	
+<script>
+
+    var clients = [
+        { "Full Name": "Kosit Aromsava", "Province": "Kalasin", "Category Link": "", "Link": "", "Reason": "for see about data...", "DateTime": "12/09/16" },
+        { "Full Name": "Kosit Aromsava", "Province": "Kalasin", "Category Link": "Cate Link1", "Link": "Link2", "Reason": "for see about data1...", "DateTime": "09/09/59" },
+        { "Full Name": "Kosit Aromsava", "Province": "Kalasin", "Category Link": "Cate Link1", "Link": "Link3", "Reason": "for see about data3...", "DateTime": "09/09/59" },
+        { "Full Name": "Kosit Aromsava", "Province": "Kalasin", "Category Link": "Cate Link1", "Link": "Link3", "Reason": "for see about reason2...", "DateTime": "12/09/16" },
+        { "Full Name": "Kosit Aromsava", "Province": "Kalasin", "Category Link": "Cate Link1", "Link": "Link3", "Reason": "for see about reason3...", "DateTime": "12/09/16"  }
+    ];
+    var countries = [
+        { Name: "", Id: 0 },
+        { Name: "United States", Id: 1 },
+        { Name: "Canada", Id: 2 },
+        { Name: "United Kingdom", Id: 3 }
+    ];
+
+    $("#jsGrid").jsGrid({
+        width: "100%",
+        height: "auto",
+
+        sorting: true,
+        paging: true,
+ 
+        fields: [
+            { name: "Full Name", type: "text", width: 100, validate: "required" },
+            { name: "Province", type: "text", width: 50 },
+            { name: "Category Link", type: "text", width: 100 },
+            { name: "Link", type: "text", width: 100 },
+            { name: "Reason", type: "text", width: 100 },
+            { name: "DateTime", type: "date", width : 50 }
+        ],
+    	data: clients
+    });
+</script>
+</body>
+</html>
+

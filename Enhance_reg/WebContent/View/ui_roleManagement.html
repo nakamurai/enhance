@@ -1,6 +1,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <style>
+.btn{
+	margin-right:5px;
+}
 #btn-addcate{
 	float:right;
 }
@@ -37,7 +40,7 @@
 						<div class="form-group">
 							<div class="group-button" style="float:right; margin-right:15px;">
 								<input type='hidden' value='add' id='action' name='action'>
-								<input type='hidden' value='' id=cate_type_id name='cate_type_id'>
+								<input type='hidden' value='' id=role_id name='role_id'>
 								<button id="btn-insert_role" type="button" class="btn btn-info">Add</button>
 								<button id="btn-cancel" type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
 							</div> 
@@ -63,8 +66,8 @@
 					<form class="form-horizontal">
 						<div class="form-group">
 							<div id="cate_link_table">
-								<table>
-									<thead>
+								<table class='table table-bordered'>
+									<thead style="background-color:#d2d2d2;">
 										<th><input type="checkbox" value=""></th>
 										<th></th>
 										<th>Category Link Name</th>

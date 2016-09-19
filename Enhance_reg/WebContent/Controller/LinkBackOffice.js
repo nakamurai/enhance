@@ -12,7 +12,7 @@ $(document).ready(function(){
 	var createTableLink = function(data){
 		var htmlTable = "";
 		var htmlTable="<table class='table table-striped table-bordered table-hover' id='htmlTable'>";
-				htmlTable+="<thead>";
+				htmlTable+="<thead style=\"background-color:#d2d2d2;\">";
 					htmlTable+="<tr>";
 						htmlTable+="<th class='fontcen' style=\"min-width:5%;\">";
  						htmlTable+="ID";

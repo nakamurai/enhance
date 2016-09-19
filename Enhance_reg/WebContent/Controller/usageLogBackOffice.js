@@ -12,7 +12,7 @@ $(document).ready(function(){
     	//alert("test panel table");
 		var htmlTable = "";
 		var htmlTable="<table class='table table-striped table-bordered' id='htmlTable'>";
-				htmlTable+="<thead>";
+				htmlTable+="<thead style=\"background-color:#d2d2d2;\">";
 					htmlTable+="<tr>";
 						htmlTable+="<th class='fontcen'>";
  						htmlTable+="Full Name";

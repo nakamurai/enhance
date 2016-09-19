@@ -12,17 +12,17 @@ $(document).ready(function(){
 	var createTableCateTypeList = function(data){
 		var htmlTable = "";
 		var htmlTable="<table class='table table-striped table-bordered table-hover' id='htmlTable'>";
-				htmlTable+="<thead>";
+				htmlTable+="<thead style=\"background-color:#d2d2d2;\">";
 					htmlTable+="<tr>";
-						htmlTable+="<th class='fontcen' style=\"min-width:5%;\">";
+						htmlTable+="<th class='fontcen'>";
  						htmlTable+="ID";
  						htmlTable+="</th>";
 
- 						htmlTable+="<th class='fontcen' style=\"min-width:80%;\">";
+ 						htmlTable+="<th class='fontcen'>";
  						htmlTable+="Category Type";
  						htmlTable+="</th>";
 
- 						htmlTable+="<th class='fontcen'	 style=\"min-width=20%\">";
+ 						htmlTable+="<th class='fontcen'>";
  						htmlTable+="Action";
  						htmlTable+="</th>";
 					htmlTable+="</tr>";

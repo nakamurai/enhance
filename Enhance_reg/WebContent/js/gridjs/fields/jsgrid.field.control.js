@@ -1,4 +1,3 @@
-
 (function(jsGrid, $, undefined) {
 
     var Field = jsGrid.Field;

@@ -1,54 +1,157 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	
-	<link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" />
-	<link href="https://cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet" />
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- 	<link href="../Css/UserManagement/style_for_user_management.css" rel="stylesheet" /> -->
+<!-- 	<link rel="stylesheet" href="../library/bootstrap/css/bootstrap.min.css"> -->
 
 <style>
-.row{
+.fontcen{
+	text-align:center;
+}
+
+.edituser{
+	margin-right:5px;
+}
+#btn-adduser{
+	float:left;
+	margin-left:15px;
 	margin-bottom:5px;
-	margin-left: 0px !important;
-}
-.modal-body{
-	height:auto !important;
-}
-.horizonline{
-	margin: 0px 15px 15px 0px;
 }
 </style>
 
 	<div class="container-fluid">
 		<div class="row">
-			<button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Add Category Link</button>
+			<button id="btn-adduser" type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Add User</button>
 		</div>
 		
 		<div id="Panel_Table"></div>
+		
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		    <div class="modal-dialog" role="document">
+		      <div class="modal-content">
+		        <div class="modal-body">
+		          <form class="form-horizontal">
+					<div class="form-group">
+					   	<label class="col-sm-3 control-label" id="inputname">ชื่อผู้ใช้งาน</label>
+					    <div class="col-sm-6">
+					  		<input class="form-control input-sm" id="input-name" placeholder="กรอกชื่อผู้ใช้งาน">
+						</div>
+					</div>
+					<div class="form-group">
+					   	<label class="col-sm-3 control-label" id="inputpass">รหัสผ่าน</label>
+					    <div class="col-sm-6">
+					   		<input class="form-control input-sm" id="input-pass" placeholder="กรอกรหัสผ่าน">
+						</div>
+					</div>
+					<div class="form-group">
+					   	<label class="col-sm-3 control-label" id="inputconpass">ยืนยันรหัสผ่าน</label>
+					   	<div class="col-sm-6">
+					   		<input class="form-control input-sm" id="input-conpass" placeholder="ยืนยันรหัสผ่าน">
+						</div>
+					</div>
+				<div class="horizonline"></div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label" id="inputinit">คำนำหน้า</label>
+					  	<div class="col-sm-6">
+					  		<select class="form-control input-sm">
+								  <option>นาย</option>
+								  <option>นาง</option>
+								  <option>นางสาว</option>
+							</select>
+					  	</div>
+				  	</div>
+				  	<div class="form-group">
+				    	<label class="col-sm-3 control-label" id="inputfname">ชื่อ</label>
+				    	<div class="col-sm-6">
+				   	   		<input class="form-control input-sm" id="input-fname" placeholder="กรอกชื่อ">
+				  		</div>
+				  	</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label" id="inputlname">นามสกุล</label>
+					   	<div class="col-sm-6">
+					   		<input class="form-control input-sm" id="input-lname" placeholder="นามสกุล">
+						</div>
+					</div>
+					<div class="form-group">
+					   	<label for="inputemail" class="col-sm-3 control-label">อีเมลล์</label>
+					   	<div class="col-sm-6">
+					   		<input type="email" class="form-control input-sm" id="input-email" placeholder="อีเมลล์">
+					   	</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label" id="inputprovince">จังหวัด</label>
+					  	<div class="col-sm-6">
+					  		<select class="form-control input-sm" id="province" name="province"></select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label" id="inputrole">Role</label>
+					  	<div class="col-sm-6">
+					  		<select class="form-control input-sm">
+							  <option>1</option>
+							  <option>2</option>
+							  <option>3</option>
+							</select>
+					  	</div>
+					</div>
+					<div class="form-group">
+					   	<label class="col-sm-3 control-label" id="inputpos">หน่วยงานที่สังกัด</label>
+					   	<div class="col-sm-6">
+					   		<input class="form-control input-sm" id="input-pos" placeholder="หน่วยงานที่สังกัด">
+						</div>
+					</div>
+					<div class="form-group">
+					   	<label class="col-sm-3 control-label" id="inputpos1">ตำแหน่ง</label>
+					   	<div class="col-sm-6">
+					   		<input class="form-control input-sm" id="input-pos1" placeholder="ตำแหน่ง">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label" id="inputpos1">สถานะ</label>
+						<div class="col-sm-6">
+							<label class="radio-inline ">
+					    		<input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> เปิดใช้งาน
+							</label>
+							<label class="radio-inline">
+							    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> ปิดใช้งาน
+							</label>
+						</div>
+					</div>
+				</form>
+		        </div>
+		        <div class="modal-footer">
+		          <input type='hidden' value='add' id='action' name='action'>
+				  <input type='hidden' value='' id=Muser_id name='Muser_id'>
+		          <button id="btn-cancel" type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+		          <button id="btn-insert" type="button" class="btn btn-info">Add</button>
+		        </div>
+		      </div>
+		    </div>
+		  </div>
 	</div>
 	
 <script>
-function insertsubject() {
+// function insertsubject() {
 	
-	//var inputname = $("#input-name").val();
-	//alert("A "+ $("#input-name").val() );
+// 	//var inputname = $("#input-name").val();
+// 	//alert("A "+ $("#input-name").val() );
 	
-	$.ajax({
-		url: "http://192.168.1.49:8082/niems/Model/user/insert.jsp?callback=?",
-		type: "post",
-		dataType: "jsonp",
-		data:{"user_name":$("#input-name").val(), "password":$("#input-pass").val(), "prefix":$("#input-init").val(), "first_name":$("#input-fname").val(), "last_name":$("#input-lname").val(), "email":$("#input-email").val(), "province":$("#province").val(), "status":"True", "position":$("#input-pos1").val(), "organization":$("#input-pos").val(), "user_items":"1", "role_id":"2"},
-		success:function(data){
-			if(data != null){
+// 	$.ajax({
+// 		url: "http://192.168.1.49:8082/niems/Model/user/insert.jsp?callback=?",
+// 		type: "post",
+// 		dataType: "jsonp",
+// 		data:{"user_name":$("#input-name").val(), "password":$("#input-pass").val(), "prefix":$("#input-init").val(), "first_name":$("#input-fname").val(), "last_name":$("#input-lname").val(), "email":$("#input-email").val(), "province":$("#province").val(), "status":"True", "position":$("#input-pos1").val(), "organization":$("#input-pos").val(), "user_items":"1", "role_id":"2"},
+// 		success:function(data){
+// 			if(data != null){
 				
-				alert("insert complate");
+// 				alert("insert complate");
 				
-    			}else{		
-    				 alert("insert error");
+//     			}else{		
+//     				 alert("insert error");
 
-    			}
+//     			}
 			 
-			}
-		});
-	}
+// 			}
+// 		});
+// 	}
 </script>
 

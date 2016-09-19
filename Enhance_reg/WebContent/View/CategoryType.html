@@ -1,0 +1,60 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+<!-- 	<link href="../Css/CategoryType/style_for_category_type.css" rel="stylesheet" /> -->
+<!-- 	<link rel="stylesheet" href="../library/bootstrap/css/bootstrap.min.css"> -->
+<!-- 	<script src="../library/jquery/jquery-1.12.4.min.js" type="text/javascript" ></script> -->
+<style>
+#btn-addcate{
+	float:right;
+}
+.editCateType{
+	margin-right:5px;
+}
+</style>
+	<div class="container">
+		<div class="row">
+				<div class="form-inline">
+					<div class="form-group" style="margin-left:15px;">
+						<input class="form-control" id="input-search" placeholder="ค้นหาหมวดหมู่">
+						<button id="btn-search" class="btn btn-default">ค้นหา</button>
+						
+					</div>
+					<button id="btn-addcate" type="button" class="btn btn-info" data-toggle="modal" data-target="#FormAddCateType" style="float:right; margin-right:15px; margin-bottom:5px;">Add Category Type</button>
+				</div>
+			</div>
+				
+		<div id="TableCateType"></div>
+	</div>
+	
+	<div id="FormAddCateType" class="modal fade" aria-hidden="true">
+		<div class="modal-dialog role="document">
+			<div class="modal-content">
+			
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+	        		</button>
+	        		<h5 class="modal-title">Add Category Type</h5>
+	     		</div>
+	      
+				<div class="modal-body">
+					<form class="form-horizontal">
+						<div class="form-group">
+							<label class="col-sm-4 control-label">Category Type Name</label>
+				    		<div class="col-sm-8">
+				  			<input class="form-control input-sm" id="input-cateTypeName" placeholder="กรอกชื่อหมวดหมู่">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="group-button" style="float:right; margin-right:15px;">
+								<input type='hidden' value='add' id='action' name='action'>
+								<input type='hidden' value='' id=cate_type_id name='cate_type_id'>
+								<button id="btn-insertcate" type="button" class="btn btn-info">Add</button>
+								<button id="btn-cancel" type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+							</div> 
+						</div>
+	      			</form>
+	      		</div>
+	    	</div>
+	  	</div>
+	</div>

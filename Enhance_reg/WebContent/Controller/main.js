@@ -12,6 +12,8 @@ $(document).ready(function() {
 				$("[href='#tabs-4']").trigger("click");
 			}else if($("li",this).eq(4).hasClass("TabsActive")){
 				$("[href='#tabs-5']").trigger("click");
+			}else if($("li",this).eq(5).hasClass("TabsActive")){
+				$("[href='#tabs-6']").trigger("click");
 			}else{
 				false;
 			}
@@ -19,7 +21,7 @@ $(document).ready(function() {
 	 
 	setTimeout(function(){
 		$("a[href='#tabs-1']").trigger("click");
-	},0);
+	},500);
 	
 });
 

@@ -14,15 +14,15 @@ $(document).ready(function(){
 		var htmlTable="<table class='table table-striped table-bordered table-hover' id='htmlTable'>";
 				htmlTable+="<thead style=\"background-color:#d2d2d2;\">";
 					htmlTable+="<tr>";
-						htmlTable+="<th class='fontcen'>";
+						htmlTable+="<th class='fontcen' style='min-width:5%;'>";
  						htmlTable+="ID";
  						htmlTable+="</th>";
 
- 						htmlTable+="<th class='fontcen'>";
+ 						htmlTable+="<th class='fontcen' style='min-width:50%;'>";
  						htmlTable+="Role Name";
  						htmlTable+="</th>";
 
- 						htmlTable+="<th class='fontcen'>";
+ 						htmlTable+="<th class='fontcen' style='min-width:13%;'>";
  						htmlTable+="Action";
  						htmlTable+="</th>";
 					htmlTable+="</tr>";

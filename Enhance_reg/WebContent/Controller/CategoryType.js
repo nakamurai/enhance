@@ -14,15 +14,15 @@ $(document).ready(function(){
 		var htmlTable="<table class='table table-striped table-bordered table-hover' id='htmlTable'>";
 				htmlTable+="<thead style=\"background-color:#d2d2d2;\">";
 					htmlTable+="<tr>";
-						htmlTable+="<th class='fontcen'>";
+						htmlTable+="<th class='fontcen' style=\"min-width:5%;\">";
  						htmlTable+="ID";
  						htmlTable+="</th>";
 
- 						htmlTable+="<th class='fontcen'>";
+ 						htmlTable+="<th class='fontcen' style=\"min-width:60%;\">";
  						htmlTable+="Category Type";
  						htmlTable+="</th>";
 
- 						htmlTable+="<th class='fontcen'>";
+ 						htmlTable+="<th class='fontcen' style=\"min-width:10%;\">";
  						htmlTable+="Action";
  						htmlTable+="</th>";
 					htmlTable+="</tr>";
@@ -161,7 +161,7 @@ $(document).ready(function(){
 									//console.log(data);
 									
 									if(data=="success"){
-										//alert("insert data is successfully.");
+										alert("insert data is successfully.");
 										$("#FormAddCateType").modal('hide');
 										selecAlltCateType();
 
@@ -185,7 +185,7 @@ $(document).ready(function(){
 								//console.log(data);
 								
 								if(data=="success"){
-									//alert("update data is successfully.");
+									alert("update data is successfully.");
 									$("#FormAddCateType").modal('hide');
 									$("#btn-insert").html("Add");
 									$("#action").val("add");

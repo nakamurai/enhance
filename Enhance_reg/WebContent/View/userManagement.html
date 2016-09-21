@@ -7,6 +7,7 @@
 .fontcen{
 	text-align:center;
 }
+.required:after { content:" *"; }
 
 .edituser{
 	margin-right:5px;
@@ -15,6 +16,10 @@
 	float:left;
 	margin-left:15px;
 	margin-bottom:5px;
+}
+.asteriskField{
+	color: red;
+	position: absolute;
 }
 </style>
 
@@ -38,60 +43,67 @@
 		        <div class="modal-body">
 		          <form class="form-horizontal">
 					<div class="form-group">
-					   	<label class="col-sm-3 control-label" id="inputname">ชื่อผู้ใช้งาน</label>
-					    <div class="col-sm-6">
-					  		<input class="form-control input-sm" id="input-name" placeholder="กรอกชื่อผู้ใช้งาน" required>
+					   	<label class="col-sm-4 control-label" id="inputname">ชื่อผู้ใช้งาน</label>
+					    <div class="form-inline col-sm-6">
+					  		<input class="form-control input-sm" id="input-name" placeholder="กรอกชื่อผู้ใช้งาน">
+					  		<span class="asteriskField"> *</span>
 						</div>
 					</div>
-					<div class="form-group">
-					   	<label class="col-sm-3 control-label" id="inputpass">รหัสผ่าน</label>
+					<div class="form-inline form-group">
+					   	<label class="col-sm-4 control-label" id="inputpass">รหัสผ่าน</label>
 					    <div class="col-sm-6">
 					   		<input class="form-control input-sm" id="input-pass" placeholder="กรอกรหัสผ่าน">
+					   		<span class="asteriskField"> *</span>
 						</div>
 					</div>
-					<div class="form-group">
-					   	<label class="col-sm-3 control-label" id="inputconpass">ยืนยันรหัสผ่าน</label>
+					<div class="form-inline form-group">
+					   	<label class="col-sm-4 control-label" id="inputconpass">ยืนยันรหัสผ่าน</label>
 					   	<div class="col-sm-6">
 					   		<input class="form-control input-sm" id="input-conpass" placeholder="ยืนยันรหัสผ่าน">
+					   		<span class="asteriskField">*</span>
 						</div>
 					</div>
 				<div class="horizonline"></div>
-					<div class="form-group">
-						<label class="col-sm-3 control-label" id="inputinit">คำนำหน้า</label>
+					<div class="form-inline form-group">
+						<label class="col-sm-4 control-label" id="inputinit">คำนำหน้า</label>
 					  	<div class="col-sm-6">
 					  		<select class="form-control input-sm">
 								  <option>นาย</option>
 								  <option>นาง</option>
 								  <option>นางสาว</option>
 							</select>
+							<span class="asteriskField">*</span>
 					  	</div>
 				  	</div>
-				  	<div class="form-group">
-				    	<label class="col-sm-3 control-label" id="inputfname">ชื่อ</label>
+				  	<div class="form-inline form-group">
+				    	<label class="col-sm-4 control-label" id="inputfname">ชื่อ</label>
 				    	<div class="col-sm-6">
 				   	   		<input class="form-control input-sm" id="input-fname" placeholder="กรอกชื่อ">
+				   	   		<span class="asteriskField">*</span>
 				  		</div>
 				  	</div>
-					<div class="form-group">
-						<label class="col-sm-3 control-label" id="inputlname">นามสกุล</label>
+					<div class="form-inline form-group">
+						<label class="col-sm-4 control-label" id="inputlname">นามสกุล</label>
 					   	<div class="col-sm-6">
 					   		<input class="form-control input-sm" id="input-lname" placeholder="นามสกุล">
 						</div>
 					</div>
-					<div class="form-group">
-					   	<label for="inputemail" class="col-sm-3 control-label">อีเมลล์</label>
+					<div class="form-inline form-group">
+					   	<label for="inputemail" class="col-sm-4 control-label">อีเมลล์</label>
 					   	<div class="col-sm-6">
 					   		<input type="email" class="form-control input-sm" id="input-email" placeholder="อีเมลล์">
+					   		<span class="asteriskField">*</span>
 					   	</div>
 					</div>
-					<div class="form-group">
-						<label class="col-sm-3 control-label" id="inputprovince">จังหวัด</label>
+					<div class="form-inline form-group">
+						<label class="col-sm-4 control-label" id="inputprovince">จังหวัด</label>
 					  	<div class="col-sm-6">
 					  		<select class="form-control input-sm" id="province" name="province"></select>
+					  		<span class="asteriskField">*</span>
 						</div>
 					</div>
-					<div class="form-group">
-						<label class="col-sm-3 control-label" id="inputrole">Role</label>
+					<div class="form-inline form-group">
+						<label class="col-sm-4 control-label" id="inputrole">Role</label>
 					  	<div class="col-sm-6">
 					  		<select class="form-control input-sm">
 							  <option>1</option>
@@ -100,23 +112,23 @@
 							</select>
 					  	</div>
 					</div>
-					<div class="form-group">
-					   	<label class="col-sm-3 control-label" id="inputpos">หน่วยงานที่สังกัด</label>
+					<div class="form-inline form-group">
+					   	<label class="col-sm-4 control-label" id="inputpos">หน่วยงานที่สังกัด</label>
 					   	<div class="col-sm-6">
 					   		<input class="form-control input-sm" id="input-pos" placeholder="หน่วยงานที่สังกัด">
 						</div>
 					</div>
-					<div class="form-group">
-					   	<label class="col-sm-3 control-label" id="inputpos1">ตำแหน่ง</label>
+					<div class="form-inline form-group">
+					   	<label class="col-sm-4 control-label" id="inputpos1">ตำแหน่ง</label>
 					   	<div class="col-sm-6">
 					   		<input class="form-control input-sm" id="input-pos1" placeholder="ตำแหน่ง">
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="col-sm-3 control-label" id="inputpos1">สถานะ</label>
+						<label class="col-sm-4 control-label" id="inputpos1">สถานะ</label>
 						<div class="col-sm-6">
 							<label class="radio-inline ">
-					    		<input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> เปิดใช้งาน
+					    		<input checked="checked" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> เปิดใช้งาน
 							</label>
 							<label class="radio-inline">
 							    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> ปิดใช้งาน

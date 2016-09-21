@@ -8,6 +8,9 @@ $(document).ready(function(){
 		});
 	};
 	
+	
+	
+	
 	var createTableUsage = function(data){
     	//alert("test panel table");
 		var htmlTable = "";
@@ -70,6 +73,24 @@ $(document).ready(function(){
  	$("#UsageTable").html(htmlTable);
 	};
 	
+	var selecAllUsage = function(){
+		$.ajax({
+	        url: "http://192.168.1.49:8082/niems/Model/usage_log/selectAll.jsp", 
+	        type:"post",
+	        dataType:"jsonp",
+	        data:{"callback":"?"},
+	        success:function(data){
+
+	        	createTableUsage(data);
+	            
+	        }
+		});
+
+	}
+	
+	var nowTemp = new Date();
+	var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+	
 // -------------page-6.html-------------
 	$("a[href='#tabs-6']").click(function(){	
 		addClassAsOfTabs(5);
@@ -81,27 +102,68 @@ $(document).ready(function(){
 			success:function(data){
 			
 				$("#tabs-6").html(data);
-				var selecAllUser = function(){
-					$.ajax({
-				        url: "http://192.168.1.49:8082/niems/Model/usage_log/selectAll.jsp", 
-				        type:"post",
-				        dataType:"jsonp",
-				        data:{"callback":"?"},
-				        success:function(data){
-				        	alert("Hi data");
-				        	console.log(data);
-				        	createTableUsage(data);
-				            
-				        }
-					});
-					$(document).ready(function(){
-						
-					});
-				}
-				selecAllUser();
+				
+				setTimeout(function(){
+					selecAllUsage();
+				},0);
+				
+				//date start
+				var checkin = $('#dpk1').datepicker({
+					format: 'yyyy/mm/dd',
+					todayHighlight: true,
+					autoclose: true,
+					onRender: function(date) {
+					    return date.valueOf();
+					  }
+				}).on('changeDate', function(ev) {
+					if (ev.date.valueOf() > checkout.date.valueOf()) {
+					    var newDate = new Date(ev.date)
+					    newDate.setDate(newDate.getDate() + 1);
+					    checkout.setValue(newDate);
+					    //alert($('#dpk1').val());
+					  }
+					 	  checkin.hide();
+						  $('#dpk2')[0].focus();
 
+						}).data('datepicker');
+
+				var checkout = $('#dpk2').datepicker({
+					format: 'yyyy/mm/dd',
+					todayHighlight: true,
+					autoclose: true,
+					onRender: function(date) {
+				    return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
+				  }
+				}).on('changeDate', function(ev) {
+				  checkout.hide();
+				}).data('datepicker');
+				//date end
+				
+			    console.log($('#dpk1').data('datepicker'));
+				//console.log(checkin);
+				$("#btn-searchUsage").click(function(){
+					  $.ajax({
+						  url:"http://192.168.1.49:8082/niems/Model/usage_log/search.jsp",
+						  type:"post",
+						  dataType:"jsonp",
+						  data:{"callback":"?","keyword":$("#searchLog").val(),"start_date":checkin,"end_date":checkout},
+					
+						  success:function(data){
+							//console.log(data);
+							  
+							  createTableUsage(data);
+
+						}
+					  });
+				});
+				
+				$(document).ready(function(){
+
+				});
 			}
+
 		});
 	});
+
 
 });

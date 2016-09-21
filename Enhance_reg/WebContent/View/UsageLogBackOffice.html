@@ -1,52 +1,32 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>Usage Log Back Office</title>
-  
-</head>
-<body>
+	
 	<div class="container">
-		<div class="row" id="search">
-			<div class='col-md-5'>
+		<div class="row">
+			<div class='col-md-4'>
 		        <div class="form-group">
-		            <div class='input-group date' id='datetimepicker6'>
-		                <input type='text' class="form-control" />
-		                <span class="input-group-addon">
-		                    <span class="glyphicon glyphicon-calendar"></span>
-		                </span>
+		            <div class='input-group date'>
+		            	<input type="text" class="form-control" id="dpk1" name="dpk1" placeholder="From date" type="text"/>
+                		<label for="dpk1" class="input-group-addon btn"><span class="glyphicon glyphicon-calendar"></span></label>
 		            </div>
 		        </div>
 		    </div>
-		    <div class='col-md-5'>
+		    
+		    <div class='col-md-4'>
 		        <div class="form-group">
-		            <div class='input-group date' id='datetimepicker7'>
-		                <input type='text' class="form-control" />
-		                <span class="input-group-addon">
-		                    <span class="glyphicon glyphicon-calendar"></span>
-		                </span>
+		            <div class='input-group date' >
+		                <input type="text" class="form-control" id="dpk2" name="dpk2" placeholder="To date" type="text"/>
+                		<label for="dpk2" class="input-group-addon btn"><span class="glyphicon glyphicon-calendar"></span></label>
 		            </div>
 		        </div>
+		    </div>
+		    <div class='col-md-4'>
+		    	<div class="form-inline" style="float:right;">
+		    		<input type='text' class="form-control" id="searchLog"/>
+		    		<button id="btn-searchUsage" class="btn btn-default">ค้นหา</button>
+		    	</div>
 		    </div>
 		</div>
+
 		<div id="UsageTable"></div>
 	</div>
-	
-<script type="text/javascript">
-$(function () {
-    $('#datetimepicker6').datetimepicker();
-    $('#datetimepicker7').datetimepicker({
-        useCurrent: false //Important! See issue #1075
-    });
-    $("#datetimepicker6").on("dp.change", function (e) {
-        $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
-    });
-    $("#datetimepicker7").on("dp.change", function (e) {
-        $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
-    });
-});
 
-</script>
-</body>
-</html>
 
